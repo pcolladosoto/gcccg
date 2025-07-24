@@ -1,4 +1,4 @@
-module github.com/pcolladosoto/gcccp
+module github.com/pcolladosoto/gcccg
 
 go 1.24
 
