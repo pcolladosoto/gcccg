@@ -1,0 +1,9 @@
+# Ignore hidden files except the .gitignore
+.*
+!.gitignore
+
+# Ignore build binaries
+gcccg
+
+# Ignore Markdown files by default (we generate a ton)
+*.md
