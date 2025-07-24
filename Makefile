@@ -1,4 +1,4 @@
 CC := go
 
-gcccg: cmd/main.go cmd/changelog.tmpl
-	$(CC) build -o $@ ./cmd
+gcccg: *.go changelog.tmpl
+	$(CC) build -o $@
