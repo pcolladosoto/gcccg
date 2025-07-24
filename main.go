@@ -65,7 +65,7 @@ var (
 	rootCmd = &cobra.Command{
 		Use:   "gcccg",
 		Short: "Go Conventional Commits Changelog Generator.",
-		Long:  "Go nuts!",
+		Long:  "Go Conventional Commits Changelog Generator.",
 
 		// Note we need to configure logging here as flags are not parsed before
 		// calling rootCmd.Execute on main... As this PreRun function is persistent,
@@ -198,11 +198,6 @@ var (
 		},
 	}
 
-	tmpCmd = &cobra.Command{
-		Use:   "tmp",
-		Short: "A temporary command...",
-	}
-
 	fromTag    string
 	toTag      string
 	repoPath   string
@@ -231,7 +226,6 @@ func init() {
 
 	// Add the different sub-commands
 	rootCmd.AddCommand(versionCmd)
-	rootCmd.AddCommand(tmpCmd)
 }
 
 func main() {
