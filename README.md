@@ -9,8 +9,8 @@ browsing available changelog generators nothing really hit the spot. So... why n
 write one?
 
 This task is actually bearable thanks to the great [leodido/go-conventionalcommit][]
-parser (which is based on [Ragel][https://www.colm.net/open-source/ragel/]) and the
-Go-native Git implementation provided by [go-git/go-git][].
+parser (which is based on [Ragel][ragel]) and the Go-native Git implementation
+provided by [go-git/go-git][].
 
 ## Installation
 Installing this tool is as simple as running
@@ -56,3 +56,4 @@ The following show usual invocations of `gcccg`:
 <!-- REFs -->
 [leodido/go-conventionalcommit]: https://github.com/leodido/go-conventionalcommits
 [go-git/go-git]: https://github.com/go-git/go-git
+[ragel]: https://www.colm.net/open-source/ragel/
