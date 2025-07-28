@@ -13,28 +13,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-type commitType int
-
-func ParseCommitType(cc string) commitType {
-	switch cc {
-	case "ci":
-		return ci
-	case "fix":
-		return fix
-	case "docs":
-		return docs
-	default:
-		return invalid
-	}
-}
-
-const (
-	invalid commitType = iota
-	ci
-	fix
-	docs
-)
-
 var (
 	rootCmd = &cobra.Command{
 		Use:   "gcccg",
@@ -145,12 +123,18 @@ var (
 				ReleaseName: fromTag,
 				FromTag:     fromTag,
 				ToTag:       toTag,
-				Ci:          pCommits[ci],
-				Fixes:       pCommits[fix],
-				Docs:        pCommits[docs],
-				Authors:     authors,
-				AddEmail:    addEmail,
-				GhMarkdown:  ghMarkdown,
+
+				Ci:    pCommits[ci],
+				Fixes: pCommits[fix],
+				Docs:  pCommits[docs],
+				Build: pCommits[build],
+				Feat:  pCommits[feat],
+				Perf:  pCommits[perf],
+				Test:  pCommits[test],
+
+				Authors:    authors,
+				AddEmail:   addEmail,
+				GhMarkdown: ghMarkdown,
 			}, toStdout, outputPath); err != nil {
 				slog.Error("error executing the template", "err", err)
 			}

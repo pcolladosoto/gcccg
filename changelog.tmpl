@@ -2,7 +2,21 @@
 
 This release contains the changes made between tags {{.FromTag}} and {{.ToTag}}.
 
-You can [compare it with the previous release](https://github.com/scitags/flowd-go/compare/{{.FromTag}}...{{.ToTag}}).
+You can .[compare it with the previous release](https://github.com/scitags/flowd-go/compare/{{.FromTag}}...{{.ToTag}}).
+
+{{if .Feat}}
+{{if .GhMarkdown}}
+<details>
+<summary><h2>Features</h2></summary>
+{{else}}
+## Features
+{{end}}
+{{range $hash, $description := .Feat}}1. {{ $description }} ({{ $hash }})
+{{end}}
+{{if .GhMarkdown}}
+</details>
+{{end}}
+{{end}}
 
 {{if .Fixes}}
 {{if .GhMarkdown}}
@@ -40,6 +54,48 @@ You can [compare it with the previous release](https://github.com/scitags/flowd-
 ## Docs
 {{end}}
 {{range $hash, $description := .Docs}}1. {{ $description }} ({{ $hash }})
+{{end}}
+{{if .GhMarkdown}}
+</details>
+{{end}}
+{{end}}
+
+{{if .Build}}
+{{if .GhMarkdown}}
+<details>
+<summary><h2>Build</h2></summary>
+{{else}}
+## Build
+{{end}}
+{{range $hash, $description := .Build}}1. {{ $description }} ({{ $hash }})
+{{end}}
+{{if .GhMarkdown}}
+</details>
+{{end}}
+{{end}}
+
+{{if .Perf}}
+{{if .GhMarkdown}}
+<details>
+<summary><h2>Performance</h2></summary>
+{{else}}
+## Performance
+{{end}}
+{{range $hash, $description := .Perf}}1. {{ $description }} ({{ $hash }})
+{{end}}
+{{if .GhMarkdown}}
+</details>
+{{end}}
+{{end}}
+
+{{if .Test}}
+{{if .GhMarkdown}}
+<details>
+<summary><h2>Tests</h2></summary>
+{{else}}
+## Tests
+{{end}}
+{{range $hash, $description := .Test}}1. {{ $description }} ({{ $hash }})
 {{end}}
 {{if .GhMarkdown}}
 </details>

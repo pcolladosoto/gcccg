@@ -15,12 +15,22 @@ type ChangelogData struct {
 	ReleaseName string
 	FromTag     string
 	ToTag       string
-	Fixes       map[string]string
-	Ci          map[string]string
-	Docs        map[string]string
-	Authors     map[string]string
-	AddEmail    bool
-	GhMarkdown  bool
+
+	Ci       map[string]string
+	Fixes    map[string]string
+	Docs     map[string]string
+	Build    map[string]string
+	Chore    map[string]string
+	Feat     map[string]string
+	Perf     map[string]string
+	Refactor map[string]string
+	Revert   map[string]string
+	Style    map[string]string
+	Test     map[string]string
+
+	Authors    map[string]string
+	AddEmail   bool
+	GhMarkdown bool
 }
 
 func executeTemplate(data ChangelogData, stdout bool, outputPath string) error {
