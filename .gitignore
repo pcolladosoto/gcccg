@@ -3,7 +3,7 @@
 !.gitignore
 
 # Ignore build binaries
-gcccg
+gcccg*
 
 # Ignore Markdown files by default (we generate a ton)
 *.md
