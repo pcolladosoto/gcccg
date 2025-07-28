@@ -2,7 +2,7 @@
 
 This release contains the changes made between tags {{.FromTag}} and {{.ToTag}}.
 
-You [compare it with the previous release](https://github.com/scitags/flowd-go/compare/{{.FromTag}}...{{.ToTag}}).
+You can [compare it with the previous release](https://github.com/scitags/flowd-go/compare/{{.FromTag}}...{{.ToTag}}).
 
 {{if .Fixes}}
 {{if .GhMarkdown}}
@@ -47,8 +47,9 @@ You [compare it with the previous release](https://github.com/scitags/flowd-go/c
 {{end}}
 
 {{if .Authors}}
+{{ $addEmail := .AddEmail}}
 ## Contributors
-{{range $email, $name := .Authors}}1. **{{$name}}**{{if .AddEmail}} <{{ $email }}>{{end}}
+{{range $email, $name := .Authors}}1. **{{$name}}**{{if $addEmail}} <{{ $email }}>{{end}}
 {{end}}
 {{end}}
 
