@@ -75,7 +75,11 @@ var (
 				os.Exit(1)
 			}
 
-			commits, err := repo.Log(&git.LogOptions{From: fromRef.Hash(), To: toRef.Hash()})
+			commits, err := repo.Log(&git.LogOptions{
+				From:  fromRef.Hash(),
+				To:    toRef.Hash(),
+				Order: git.LogOrderCommitterTime,
+			})
 			if err != nil {
 				slog.Error("error getting commits", "err", err)
 				os.Exit(1)
